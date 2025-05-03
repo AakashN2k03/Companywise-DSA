@@ -35,5 +35,6 @@ int search(int* arr, int n, int key) {
     }
     return -1;
 }
-TIME COMPLEXITY:O(LOGN)
-SPACE COMPLEXITY:O(1)
+
+// TIME COMPLEXITY:O(LOGN)
+// SPACE COMPLEXITY:O(1)
