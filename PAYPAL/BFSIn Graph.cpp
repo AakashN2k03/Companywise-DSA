@@ -24,4 +24,6 @@ vector<int> bfsTraversal(int n, vector<vector<int>> &adj){
     return bfs;
 }
 // TIME COMPLEXITY:O(E+V)
-// SPACE COMPLEXITY:O(E+V) for adjls
+// SPACE COMPLEXITY:O(V)
+
+//KEY NOTE:The adjacency list (adj) is part of the input and is not included in the space complexity calculation unless we are modifying it.
