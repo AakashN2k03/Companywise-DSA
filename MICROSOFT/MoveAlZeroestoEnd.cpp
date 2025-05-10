@@ -3,7 +3,7 @@
 class Solution {
   public:
     void pushZerosToEnd(vector<int>& arr) {
-        // code here
+        //
         int n=arr.size();
         int l,r;
         l=r=0;
