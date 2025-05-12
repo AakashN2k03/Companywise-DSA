@@ -1,6 +1,6 @@
 // GFG: Move All Zeroes to End
 
-class Solution {
+class Solution {anti-clockwise 
   public:
     void pushZerosToEnd(vector<int>& arr) {
         int n=arr.size();
