@@ -1,4 +1,4 @@
-// GFG:Rotate by 90 degree
+// GFG:Rotate by 90 degree anti-clockwise 
 
 class Solution {
   public:
