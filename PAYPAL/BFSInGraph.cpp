@@ -2,7 +2,7 @@
 
 vector<int> bfsTraversal(int n, vector<vector<int>> &adj){
     
-    vector<int>vis(n,0);
+    vector<int>vis(n,0); 
     queue<int>qu;
     qu.push(0);
      vis[0]=1;
