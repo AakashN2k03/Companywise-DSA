@@ -1,5 +1,7 @@
 // LEETCODE: 739. Daily Temperatures
 
+// PATTERN : Monotonic Stack  (Next Greater / Smaller Element)
+
 class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures) {
