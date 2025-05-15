@@ -1,5 +1,7 @@
 // LEETCODE: 209. Minimum Size Subarray Sum 
 
+//PATTERN: Variable Size Window
+
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
