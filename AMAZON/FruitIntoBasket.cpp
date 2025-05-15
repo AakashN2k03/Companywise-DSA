@@ -1,5 +1,7 @@
 // GFG: Find length of the longest subarray containing atmost two distinct integers (FRUIT INTO BASKET)
 
+// PATTERN : Variable Size Window
+
 class Solution {
   public:
     int totalElements(vector<int> &arr) {
