@@ -1,27 +1,27 @@
 // CODE 360:  Valid Parentheses 
-bool isValidParenthesis(string s)
-{
-    stack<int>st;
-    int n=s.length();
-    for(char ch:s)
-    {
-        if(ch=='(' || ch=='{' || ch=='[' )
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char>st;
+        for(char ch:s)
         {
-            st.push(ch);
+            if(ch=='(' || ch=='{' | ch=='[')
+            {
+                st.push(ch);
+            }
+            else{
+                if(st.empty()) return false;
+                if(st.top()=='(' && ch!=')' || st.top()=='{' && ch!='}' || st.top()=='[' &&  ch!=']' )
+                {
+                    return false;
+                } 
+                st.pop();
+              
+            }
         }
-        else{
-            if(st.empty()) return false;
-
-            char top_element=st.top();
-            if((ch=='(' && top_element!=')') || (ch=='{' && top_element!='}')||(ch=='[' && top_element!=']')) return false;
-
-            st.pop();
-            
-        }
+        return st.empty();
     }
-    return st.empty();
-
-}
+};
 
 // Time Complexity: O(n)
 // Space Complexity: O(n)
