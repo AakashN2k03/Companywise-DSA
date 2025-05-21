@@ -1,5 +1,7 @@
 // LEETCODE: 112. Path Sum
 
+// Pattern : Path Based (Sum/Max/Exists)
+
 class Solution {
 public:
     bool hasPathSum(TreeNode* root, int targetSum) {
