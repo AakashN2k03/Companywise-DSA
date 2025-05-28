@@ -2,6 +2,7 @@
 
 // Pattern : Monotonic Stack (Min/Max Ranges)
 
+// MOST OPTIMIZED APPROACH
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -46,3 +47,54 @@ int largestRectangle(vector<int>& heights) {
 }
 //Time complexity:O(N)
 //Space complexity:O(N)
+
+
+// ALTERNATIVE WAY (BRUTE FORCE) -> EASIEST
+class Solution {
+public:
+  vector<int> findPSE(vector<int>& arr) {
+        int n = arr.size();
+        vector<int> pse(n, -1); // Initialize with -1 (no smaller element to the left)
+        stack<int> st;
+
+        for (int i = 0; i < n; i++) {
+            while (!st.empty() && arr[st.top()] >= arr[i]) {
+                st.pop();
+            }
+            pse[i] = st.empty() ? -1 : st.top();
+            st.push(i);
+        }
+
+        return pse;
+    }
+
+    // Function to find Next Smaller Element (NSE)
+    vector<int> findNSE(vector<int>& arr) {
+        int n = arr.size();
+        vector<int> nse(n, n); // Initialize with n (no smaller element to the right)
+        stack<int> st;
+
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.empty() && arr[st.top()] > arr[i]) {
+                st.pop();
+            }
+            nse[i] = st.empty() ? n : st.top();
+            st.push(i);
+        }
+
+        return nse;
+    }
+    int largestRectangleArea(vector<int>& heights) {
+        int n=heights.size();
+        vector<int> pse = findPSE(heights);
+        vector<int> nse = findNSE(heights);
+        int maxi=0;
+        for(int i=0;i<n;i++)
+        {
+            maxi=max(maxi,(heights[i]*(nse[i]-pse[i]-1)));
+        }
+        return maxi;
+    }
+};
+// Time Complexity = O(n) + O(n) + O(n) = O(n)
+// Space Complexity = O(n) + O(n) + O(n) + O(n) = O(n)
