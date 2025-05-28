@@ -24,5 +24,5 @@ int kthSmallest(BinaryTreeNode<int>* root, int k) {
     return small;
 }
 
-Time Complexity: O(n) (without return) , ( with return ) O(k)
-Space Complexity:O(h)
+// Time Complexity: O(n) (without return) , ( with return ) O(k)
+// Space Complexity:O(h)
