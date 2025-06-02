@@ -10,7 +10,7 @@ public:
         high=n-1;
 
         while(low<=high)
-        {
+        { 
             mid=(low+high)/2;
             if(arr[mid]>arr[mid+1])
             {
