@@ -13,8 +13,8 @@ public:
         unordered_set<int> used_element;
         for(int i=index;i<nums.size();i++)
         {
-            if(used_element.count(nums[i])) continue;// skip already tried elements at this index level
-            used_element.insert(nums[i]);
+             if(used_element.find(nums[i])!=used_element.end()) continue;// skip already tried elements at this index level
+             used_element.insert(nums[i]);
             
             swap(nums[index],nums[i]);
             perm(index+1,nums,ans);
