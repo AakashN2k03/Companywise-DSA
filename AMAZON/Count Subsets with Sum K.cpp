@@ -5,9 +5,9 @@
 int MOD=1e9+7;
 int fn(int index, int target, vector<int>& arr, vector<vector<int>>& dp) {
         if (index == 0) {
-            if (target == 0 && arr[0] == 0) return 2; // two options: take or not take the 0
-            if (target == 0 || arr[0] == target) return 1;
-            return 0;
+            if (target == 0 && arr[0] == 0) return 2; // {0,0} t=0
+            if (target == 0 || arr[0] == target) return 1; //{5} t=0 emplty subset
+            return 0; ////{5} t=1 -> ans will be 0
         }
         if (dp[index][target] != -1) return dp[index][target];
         
