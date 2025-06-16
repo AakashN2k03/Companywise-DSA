@@ -36,9 +36,9 @@ public:
         // 🔸 Edge Case Check:
         // If (total_sum + d) is odd → subset sum won't be integer → not possible
         // If (total_sum - d) is negative → invalid difference → not possible
-        if ((total_sum - d) < 0 || (total_sum + d) % 2 != 0) return 0;
+        if ((total_sum - d) < 0 || (total_sum - d) % 2 != 0) return 0;
 
-        int target = (total_sum + d) / 2;
+        int target = (total_sum - d) / 2;
 
         vector<vector<int>> dp(n, vector<int>(target + 1, -1));
         return recurse(n - 1, target, arr, dp);
