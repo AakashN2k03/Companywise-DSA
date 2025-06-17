@@ -5,45 +5,46 @@
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
-        vector<vector<int>>adjls(numCourses);
-        for(auto edge:prerequisites )
-        {
-            int u=edge[0];
-            int v=edge[1];
-            adjls[u].push_back(v);
+        vector<vector<int>> adjls(numCourses);
+        for(auto it:prerequisites)
+        {   int u=it[0];
+            int v=it[1];
+            
+            adjls[v].push_back(u);
         }
-        vector<int>indegree(numCourses,0);
-        for(int i=0;i<numCourses;i++)
-        {
-            for(auto it:adjls[i])
-            {
-                indegree[it]++;
+
+        vector<int>indegree(numCourses);
+          for (int i = 0; i < numCourses; i++) {
+            for (auto adjnode : adjls[i]) {
+                indegree[adjnode]++;
             }
         }
+
         queue<int>qu;
         for(int i=0;i<numCourses;i++)
-        {
-            if(indegree[i]==0)
+        {   if(indegree[i]==0)
             {
-                qu.push(i);
-            }
+            qu.push(i);
+             }
         }
-        int counter=0;
+
+       int counter=0;
         while(!qu.empty())
-        {  
+        {
             int node=qu.front();
             qu.pop();
-             counter++;
-
-            for(auto it:adjls[node])
-            {   indegree[it]--;
-                if(indegree[it]==0)
-                {
-                    qu.push(it);
-                }
+            counter++;
+        
+            for(auto adjnode:adjls[node])
+            {  indegree[adjnode]--;
+               if(indegree[adjnode]==0)
+               { 
+                qu.push(adjnode);
+               }
             }
+
         }
-        return counter==numCourses;
+       return numCourses==counter;
         
     }
 };
