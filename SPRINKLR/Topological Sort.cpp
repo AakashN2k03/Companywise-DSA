@@ -2,6 +2,8 @@
 
 // Pattern - Topological Sort ( Kahn’s Algorithm + BFS)
 
+//NOTE: TOPOSORT ONLY APPLICABLE TO DAG
+
 #include <bits/stdc++.h> 
 vector<int> topologicalSort(vector<vector<int>> &edges, int v, int e)  {
     vector<vector<int>>adjls(v);
