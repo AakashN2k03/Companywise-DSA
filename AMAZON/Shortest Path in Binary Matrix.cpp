@@ -28,6 +28,8 @@ public:
         int row = qu.front().second.first;
         int col = qu.front().second.second;
         qu.pop();
+        
+        // if(row == n-1 && col == n-1) return dist  ;// can use here too
 
         for(int i = 0; i < 8; i++) {
             int nrow = row + dx[i];
